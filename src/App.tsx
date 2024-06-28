@@ -23,9 +23,10 @@ const config = {};
 
 function App() {
   const [table, setTable] = useState<Table | null>(null);
+  console.log("App.render", { hasTable: !!table });
 
   useEffect(() => {
-    console.log("App.useEffect", { table });
+    console.log("App.useEffect", { hasTable: !!table });
     getTable().then((table) => {
       setTable(table);
       console.log("App.useEffect.then", { table });
@@ -33,11 +34,8 @@ function App() {
   }, []);
 
   if (!table) {
-    console.log("App.render loading", { table });
     return <div>Loading...</div>;
   }
-
-  console.log("App.render", { table, config });
 
   return (
     <>
