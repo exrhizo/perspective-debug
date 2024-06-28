@@ -45,6 +45,8 @@ function App() {
       <div>
         <PerspectiveViewer table={table} />
       </div>
+      <p>Notice: hit reset or sort to regain normal scrolling</p>
+      <p>Set <code>FILE_PATH</code> for either wide or narrow example.</p>
     </>
   );
 }
