@@ -8,4 +8,4 @@ Perspective Scroll Issue
     - Note: Perspective Reset or sort fixes the issue
 
 
-![video](https://github.com/exrhizo/perspective-debug/raw/main/public/issue.mov)
+[View Video](https://github.com/exrhizo/perspective-debug/raw/main/public/issue.mov)
