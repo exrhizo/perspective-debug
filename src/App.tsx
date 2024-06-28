@@ -7,8 +7,11 @@ import { Table } from "@finos/perspective";
 import perspectiveWorker from "./perspectiveWorker";
 import PerspectiveViewer from "./PerspectiveViewer";
 
+// const FILE_PATH = "/avr.arrow";
+const FILE_PATH = "/narrow.arrow";
+
 async function getTable(): Promise<Table> {
-  const resp = await axios.get("/avr.arrow", {
+  const resp = await axios.get(FILE_PATH, {
     responseType: "arraybuffer",
   });
 
