@@ -6,3 +6,6 @@ Perspective Scroll Issue
  - `npm run dev`
  - Try scrolling
     - Note: Perspective Reset or sort fixes the issue
+
+
+![video](https://github.com/exrhizo/perspective-debug/raw/main/public/issue.mov)
