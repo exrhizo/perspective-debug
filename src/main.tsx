@@ -8,7 +8,5 @@ import './index.css'
 console.log("Created perspective worker", perspectiveWorker);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <App />
 )
