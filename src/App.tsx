@@ -5,51 +5,45 @@ import axios from "axios";
 import { Table } from "@finos/perspective";
 
 import perspectiveWorker from "./perspectiveWorker";
-import PerspectiveViewer from './PerspectiveViewer'
-
+import PerspectiveViewer from "./PerspectiveViewer";
 
 async function getTable(): Promise<Table> {
-  const resp = await axios.get('/avr.arrow', {
-    responseType: "arraybuffer"
+  const resp = await axios.get("/avr.arrow", {
+    responseType: "arraybuffer",
   });
 
   const data = resp.data;
   return await perspectiveWorker.table(data);
 }
 
-const config = {
-
-};
+const config = {};
 
 function App() {
   const [table, setTable] = useState<Table | null>(null);
 
   useEffect(() => {
-    getTable().then(setTable);
+    console.log("App.useEffect", { table });
+    getTable().then((table) => {
+      setTable(table);
+      console.log("App.useEffect.then", { table });
+    });
   }, []);
 
-  const onConfigChange = (config) => {
-    console.log("App.onConfigChange", config)
-  }
-
   if (!table) {
+    console.log("App.render loading", { table });
     return <div>Loading...</div>;
   }
 
-  console.log("PerspectiveViewer RENDER", { table, config})
+  console.log("App.render", { table, config });
 
   return (
     <>
       <h1>Perspective Test</h1>
-      <div >
-        <PerspectiveViewer
-          table={table}
-          config={config}
-          onConfigChange={onConfigChange}
-        />
+      <div>
+        <PerspectiveViewer table={table} />
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

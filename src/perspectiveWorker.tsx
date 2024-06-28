@@ -12,4 +12,5 @@ import "@finos/perspective-viewer/dist/css/themes.css";
 
 
 const worker = perspective.worker();
+console.log("PerspectiveWorker", { worker });
 export default worker;
